@@ -1,0 +1,5 @@
+getElemntById
+getElementsByTagName
+document
+getElementsByClassName
+console.log(

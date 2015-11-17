@@ -111,6 +111,9 @@ nmap ,nt :NERDTreeToggle<cr>
 
 let NERDTreeShowHidden=1
 
+let g:delimitMate_expand_cr = 1
+let g:delimitMate_expand_space = 1
+
 "Autocompletion popup menu
 "set completeopt=longest,menuone
 "inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"

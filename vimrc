@@ -24,7 +24,7 @@ set hidden
 colorscheme desert
 
 "Font size and type
-set guifont=Monaco:h12
+set guifont=Hack:h12
 
 "Tab stuff
 set tabstop=3
@@ -79,8 +79,8 @@ set mousehide
 nnoremap <leader>ft Vatzf
 
 " Custom autocomplete dictionary
-set dictionary+=/Users/Home/.vim/dict.txt
-imap ,<tab><tab> <c-x><c-k>
+"set dictionary+=/Users/Home/.vim/dict.txt
+"imap ,<tab><tab> <c-x><c-k>
 
 "Opens a vertical split and switches over
 nnoremap <leader>v <C-w>v<C-w>l
@@ -104,7 +104,7 @@ autocmd bufwritepost .vimrc source $MYVIMRC
 imap jj <esc>
 
 " Map code completion to ,+tab
-imap ,<tab> <C-x><C-o>
+"imap ,<tab> <C-x><C-o>
 
 " Shortcut for NERDTreeToggle
 nmap ,nt :NERDTreeToggle<cr>

@@ -24,7 +24,7 @@ set hidden
 colorscheme desert
 
 "Font size and type
-set guifont=Hack:h12
+set guifont=Hack:h10
 
 "Tab stuff
 set tabstop=3
@@ -37,6 +37,7 @@ set showcmd
 
 " Show line numbers
 set number
+set relativenumber
 
 "Indent stuff
 set smartindent
@@ -84,6 +85,7 @@ nnoremap <leader>ft Vatzf
 
 "Opens a vertical split and switches over
 nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>h <C-w>s<C-w>l
 
 " Shortcut for editing vimrc file
 nmap ,ev :tabedit $MYVIMRC<cr>

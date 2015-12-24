@@ -21,7 +21,7 @@ set timeoutlen=500
 set hidden
 
 "Color Scheme
-colorscheme desert
+colorscheme neonwave 
 
 "Font size and type
 set guifont=Hack:h10

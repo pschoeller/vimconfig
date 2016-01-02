@@ -1,4 +1,3 @@
-
 " Forget compatibility with Vi
 set nocompatible
 
@@ -25,6 +24,17 @@ colorscheme neonwave
 
 "Font size and type
 set guifont=Hack:h10
+
+" Move lines
+nmap <C-j> ddp==
+nmap <C-k> ddkP==
+
+" Auto center on move
+nmap G Gzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
 
 "Tab stuff
 set tabstop=3

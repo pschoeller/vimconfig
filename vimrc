@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
+Plugin 'agude/vim-eldar'
 call vundle#end()
 
 filetype plugin indent on    " required
@@ -26,6 +27,9 @@ filetype plugin indent on    " required
 
 
 syntax on
+syntax enable
+
+colorscheme eldar
 
 set ruler
 

@@ -13,6 +13,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
 Plugin 'kien/ctrlp.vim'
 Plugin 'vim-scripts/delimitMate.vim'
+Plugin 'dracula/vim'
 call vundle#end()
 
 filetype plugin indent on    " required
@@ -30,7 +31,7 @@ filetype plugin indent on    " required
 syntax on
 syntax enable
 
-"colorscheme neon-dark
+colorscheme dracula
 
 set ruler
 

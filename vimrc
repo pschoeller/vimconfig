@@ -11,6 +11,8 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
+Plugin 'kien/ctrlp.vim'
+Plugin 'vim-scripts/delimitMate.vim'
 call vundle#end()
 
 filetype plugin indent on    " required

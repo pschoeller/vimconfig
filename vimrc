@@ -1,6 +1,9 @@
+" Vimrc config file
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"========== Vundle plugin management ==========
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -29,8 +32,16 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+
+"========= Misc ==========
 syntax on
 syntax enable
+
+" Map escape to jj
+imap jj <esc>
+
+" Remap leader key
+let mapleader=","
 
 colorscheme dracula
 
@@ -79,8 +90,6 @@ set formatoptions=qrn1
 "Set incremental searching
 set incsearch
 
-set splitbelow
-
 "Highlight searching
 set hlsearch
 
@@ -102,11 +111,33 @@ set mousehide
 "Shortcut to fold tags with leader
 nnoremap <leader>ft Vatzf
 
-"Opens a vertical split and switches over
-nnoremap <leader>v <C-w>v<C-w>l
+"========== Split control ==========
+" Sets the direction of the new split
+set splitbelow splitright
 
+" Opens a split and switches to new split
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
+
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+
+"========== More Misc ==========
 " Shortcut for editing vimrc file
-nmap ,ev :tabedit $MYVIMRC<cr>
+nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 " Saves time
 nmap <space> :
@@ -117,11 +148,7 @@ autocmd BufEnter * cd %:p:h
 " Source the vimrc file after saving it
 autocmd bufwritepost .vimrc source $MYVIMRC
 
-" Map escape to jj
-imap jj <esc>
 
-" Shortcut for NERDTreeToggle
+"========== NERDTreeToggle ==========
 nmap ,nt :NERDTreeToggle<cr>
-
 let NERDTreeShowHidden=1
-

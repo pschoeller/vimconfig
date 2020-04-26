@@ -1,6 +1,9 @@
+" Vimrc config file
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"========== Vundle plugin management ==========
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 
@@ -11,9 +14,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'elzr/vim-json'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-scripts/delimitMate.vim'
 Plugin 'dracula/vim'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+"Plugin 'ryanoasis/vim-devicons'
 call vundle#end()
 
 "Enable filetypes
@@ -29,8 +34,16 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+
+"========= General Config ==========
 syntax on
 syntax enable
+
+" Map escape to jj
+imap jj <esc>
+
+" Remap leader key
+let mapleader=","
 
 colorscheme dracula
 
@@ -54,6 +67,7 @@ set tabstop=3
 set shiftwidth=3
 set softtabstop=3
 set expandtab
+set smarttab
 
 "Show command button in bottom right portion of screen
 set showcmd
@@ -79,8 +93,6 @@ set formatoptions=qrn1
 "Set incremental searching
 set incsearch
 
-set splitbelow
-
 "Highlight searching
 set hlsearch
 
@@ -102,14 +114,11 @@ set mousehide
 "Shortcut to fold tags with leader
 nnoremap <leader>ft Vatzf
 
-"Opens a vertical split and switches over
-nnoremap <leader>v <C-w>v<C-w>l
-
-" Shortcut for editing vimrc file
-nmap ,ev :tabedit $MYVIMRC<cr>
-
 " Saves time
 nmap <space> :
+
+" Shortcut for editing vimrc file
+nmap <leader>ev :tabedit $MYVIMRC<cr>
 
 " Automatically change current directory to that of file in the buffer
 autocmd BufEnter * cd %:p:h
@@ -117,11 +126,58 @@ autocmd BufEnter * cd %:p:h
 " Source the vimrc file after saving it
 autocmd bufwritepost .vimrc source $MYVIMRC
 
-" Map escape to jj
-imap jj <esc>
 
-" Shortcut for NERDTreeToggle
-nmap ,nt :NERDTreeToggle<cr>
+"========== Split control ==========
+" Removes pipe that acts as separator on splits
+set fillchars+=vert:\ 
 
+" Sets the direction of the new split
+set splitbelow splitright
+
+" Opens a split and switches to new split
+nnoremap <leader>v <C-w>v<C-w>l
+nnoremap <leader>s <C-w>s<C-w>j
+
+" Remap splits navigation to just CTRL + hjkl
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Make adjusing split sizes a bit more friendly
+noremap <silent> <C-Left> :vertical resize +3<CR>
+noremap <silent> <C-Right> :vertical resize -3<CR>
+noremap <silent> <C-Up> :resize +3<CR>
+noremap <silent> <C-Down> :resize -3<CR>
+
+" Change 2 split windows from vert to horiz or horiz to vert
+map <Leader>th <C-w>t<C-w>H
+map <Leader>tk <C-w>t<C-w>K
+
+
+"========== General navigation ==========
+" Auto center on move
+nmap G Gzz
+nmap j jzz
+nmap k kzz
+nmap n nzz
+nmap N Nzz
+nmap } }zz
+nmap { {zz
+
+
+"========== General Editing ==========
+" TODO: Move line up or down taking indent level of surrounding lines (currently conflicts w/ split nav)
+"nmap <C-j> ddp==
+"nmap <C-k> ddkP==
+
+
+"========== NERDTreeToggle ==========
+nmap <leader>nt :NERDTreeToggle<cr>
+let g:NERDTreeDirArrowExpandable = '►'
+let g:NERDTreeDirArrowCollapsible = '▼'
+let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
+"let NERDTreeMinimalUI = 1
+let g:NERDTreeWinSize=38
 

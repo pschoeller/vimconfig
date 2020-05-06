@@ -163,6 +163,8 @@ nmap n nzz
 nmap N Nzz
 nmap } }zz
 nmap { {zz
+nmap <C-d> <C-d>zz
+nmap <C-u> <C-u>zz
 
 
 "========== General Editing ==========

@@ -1,28 +1,27 @@
 " Vimrc config file
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
+"filetype off                  " required
 
-"========== Vundle plugin management ==========
+"========== Plug plugin management ==========
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 
 " Let Vundle manage Vundle, required.
 " All plugins must be between begin and end calls
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'scrooloose/nerdtree'
+call plug#begin()
+Plug 'junegunn/vim-plug'
+Plug 'scrooloose/nerdtree'
 "Plugin 'Valloric/YouCompleteMe'
-Plugin 'elzr/vim-json'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'vim-scripts/delimitMate.vim'
-Plugin 'dracula/vim'
-Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'elzr/vim-json'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-scripts/delimitMate.vim'
+Plug 'dracula/vim'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plugin 'ryanoasis/vim-devicons'
-call vundle#end()
+call plug#end()
 
 "Enable filetypes
-filetype plugin indent on    " required
+"filetype plugin indent on    " required
 
 "  Brief help
 " :PluginList       - lists configured plugins

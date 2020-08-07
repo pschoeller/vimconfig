@@ -15,6 +15,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 "Plugin 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'OmniSharp/omnisharp-vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 
